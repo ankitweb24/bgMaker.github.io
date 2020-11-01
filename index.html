@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="center_space">
+        <h2>color generator</h2>
+        <div class="box" id="bgColor">
+            <input type="color" id="colorOne" value="#657A99">  
+            <input type="color" id="colorTwo" value="">  
+        </div>
+        <p id="showdata1">linear gradient</p>
+    </div>
+
+    <div class="center_space2">
+        <!-- <h2>color generator</h2> -->
+        <div class="box" id="bgColor2">
+            <input type="color" id="colorOneBOX" value="#fff">  
+            <input type="color" id="colorTwoBOX" value="">  
+        </div>
+        <p id="showdata2">radial gradient</p>
+    </div>
+    </div>
+
+
+    <footer>
+        <p>excellent code with aj</p>
+    </footer>
+   <script>
+       const colorOne = document.getElementById('colorOne');
+       const colorTwo = document.getElementById('colorTwo');
+
+       const colorBox1 = document.getElementById('colorOneBOX');
+       const colorBox2 = document.getElementById('colorTwoBOX');
+
+       const bgColor = document.getElementById('bgColor');
+       const bgColor2 = document.getElementById('bgColor2');
+
+       var res = document.getElementById('showdata1');
+       var res1 = document.getElementById('showdata2');
+
+
+       function coderBG() {
+        bgColor.style.background = `linear-gradient(to right, ${colorOne.value}, ${colorTwo.value})`;
+        res.textContent =`copy = linear-gradient(to right, ${colorOne.value}, ${colorTwo.value})`;
+    }
+
+    function coderBG2() {
+        bgColor2.style.background = `radial-gradient(${colorBox1.value}, ${colorBox2.value})`;
+        res1.textContent =`copy = radial-gradient(${colorBox1.value}, ${colorBox2.value})`;
+    }
+
+
+
+
+    //    console.log(colorOne.value);
+    colorOne.addEventListener('input', coderBG);
+    colorTwo.addEventListener('input', coderBG);
+
+    colorBox1.addEventListener('input', coderBG2);
+    colorBox2.addEventListener('input', coderBG2);
+
+
+   </script> 
+</body>
+</html>
